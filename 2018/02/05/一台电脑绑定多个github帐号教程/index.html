@@ -96,17 +96,16 @@
 
 
 
-<meta name="description" content="思路ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:1.能够生成两对 私钥/公钥 2.push 时，可以区分两个账户，推送到相应的仓库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一台电脑绑定两个github帐号教程">
+<meta property="og:title" content="一台电脑绑定多个个GitHub帐号教程">
 <meta property="og:url" content="http://blog.wolf7.org/2018/02/05/一台电脑绑定多个github帐号教程/index.html">
 <meta property="og:site_name" content="一匹来自北方的狼">
-<meta property="og:description" content="思路ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:1.能够生成两对 私钥/公钥 2.push 时，可以区分两个账户，推送到相应的仓库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-05T05:32:10.000Z">
+<meta property="og:image" content="http://blog.wolf7.org/images/git.png">
+<meta property="og:updated_time" content="2018-02-05T05:43:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一台电脑绑定两个github帐号教程">
-<meta name="twitter:description" content="思路ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:1.能够生成两对 私钥/公钥 2.push 时，可以区分两个账户，推送到相应的仓库">
+<meta name="twitter:title" content="一台电脑绑定多个个GitHub帐号教程">
+<meta name="twitter:image" content="http://blog.wolf7.org/images/git.png">
 
 
 
@@ -141,7 +140,7 @@
 
 
 
-  <title>一台电脑绑定两个github帐号教程 | 一匹来自北方的狼</title>
+  <title>一台电脑绑定多个个GitHub帐号教程 | 一匹来自北方的狼</title>
   
 
 
@@ -325,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一台电脑绑定两个github帐号教程</h1>
+          <h1 class="post-title" itemprop="name headline">一台电脑绑定多个个GitHub帐号教程</h1>
         
 
         <div class="post-meta">
@@ -447,10 +446,10 @@
       
 
       
-        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件"><a href="#ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件" class="headerlink" title="ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:"></a>ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:</h4><pre><code>1.能够生成两对 私钥/公钥
+        <p><img src="/images/git.png" width="100%" height="70%"><br><a id="more"></a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件"><a href="#ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件" class="headerlink" title="ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:"></a>ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:</h4><pre><code>1.能够生成两对 私钥/公钥
 2.push 时，可以区分两个账户，推送到相应的仓库
-</code></pre><a id="more"></a>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><pre><code>1.生成 私钥/公钥 时，密钥文件命名避免重复
+</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><pre><code>1.生成 私钥/公钥 时，密钥文件命名避免重复
 2.设置不同 Host 对应同一 HostName 但密钥不同
 3.取消 git 全局用户名/邮箱设置，为每个仓库独立设置 用户名/邮箱
 </code></pre><h3 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h3><pre><code>1.查看已有 密钥
