@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="一匹来自北方的狼">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.wolf7.org/images/git.png">
-<meta property="og:updated_time" content="2018-02-05T05:49:15.000Z">
+<meta property="og:updated_time" content="2018-02-06T06:50:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一台电脑绑定多个GitHub帐号教程">
 <meta name="twitter:image" content="http://blog.wolf7.org/images/git.png">
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  502
+                  533
                 </span>
               
 
@@ -458,10 +458,10 @@ Mac 下输入命令 ls ~/.ssh/，看到 id_rsa 与 id_rsa_pub 则说明已经有
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C &quot;yourmail@xxx.com&quot;
 3.在 .ssh 文件夹下新建 config 文件并编辑，另不同 Host 实际映射到同一 `HostName`，
 但密钥文件不同。Host 前缀可自定义，例子中ieit
-</code></pre><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># default                                                                       </span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"><span class="comment"># two                                                                           </span></span><br><span class="line">Host ieit.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_2</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># default                                                                       </span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"><span class="comment"># rzxwang                                                                           </span></span><br><span class="line">Host rzxwang.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_2</span><br></pre></td></tr></table></figure>
 <pre><code>4.将生成的 id_rsa.pub，id_rsa_2.pub内容copy 到对应的 repo
 5.测试 ssh 链接
-</code></pre><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@ieit</span>.github.com</span><br><span class="line">ssh -T git<span class="variable">@github</span>.com</span><br><span class="line"><span class="comment"># Hi IEIT! You've successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="comment"># 出现上边这句，表示链接成功</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此处测试为默认配置，对应的KEY是id_rsa</span></span><br><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@github</span>.com</span><br><span class="line"><span class="comment"># 此处测试为rzxwang.github.com配置，对应的KEY是id_rsa_2</span></span><br><span class="line">ssh -T git<span class="variable">@rzxwang</span>.github.com</span><br><span class="line"><span class="comment"># Hi rzxwang! You've successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="comment"># 出现上边这句，表示链接成功</span></span><br></pre></td></tr></table></figure>
 <pre><code>6.将项目 clone 到本地， folder-name 是本地文件夹路径
 `git clone git@github.com:whatever folder-name`
 7.取消全局 用户名/邮箱设置，并进入项目文件夹单独设置
