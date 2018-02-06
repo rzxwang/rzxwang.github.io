@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887288826.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887298487.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887323032.png">
-<meta property="og:updated_time" content="2018-02-06T08:11:41.000Z">
+<meta property="og:updated_time" content="2018-02-06T08:53:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络">
 <meta name="twitter:description" content="需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）。">
@@ -459,7 +459,7 @@
       
 
       
-        <p>需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）。<br><a id="more"></a><br>AWS官方提供的NAT网关架构图<br><img src="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png" width="100%" height="70%"></p>
+        <p>需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）。<br><a id="more"></a><br><strong> AWS官方提供的NAT网关架构图 </strong><br><img src="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png" width="100%" height="70%"></p>
 <h4 id="相关AWS技术知识点"><a href="#相关AWS技术知识点" class="headerlink" title="相关AWS技术知识点"></a>相关AWS技术知识点</h4><p><code>1.这里涉及到AWS云的几个知识点：VPC、子网、Intelnet网关、NAT网关。</code><br><code>2.默认官方文档架构中是分为public与private俩个子网段，我的环境是已经存在VPC与Private子网段，因此，这里只涉及到了Public网段。</code></p>
 <h4 id="配置VPC"><a href="#配置VPC" class="headerlink" title="配置VPC"></a>配置VPC</h4><p><code>1.VPC默认是会存在，这里会涉及到各个AWS服务的VPC关联问题，如果新建VPC，会导致其他VPC与Lambda或其他服务无法访问等未知问题，所以，不建议在创建新的VPC，而是在原有的VPC中创建子网，然后配置NAT网关。</code><br><code>2.默认VPC中存在了Subnet子网段172.31.0.0/16，以下我们将在这个VPC中创建Subnet子网。</code><br><img src="/images/lambda-images/1517885033617.png" width="100%" height="70%"></p>
 <h4 id="创建VPC中的Subnet子网"><a href="#创建VPC中的Subnet子网" class="headerlink" title="创建VPC中的Subnet子网"></a>创建VPC中的Subnet子网</h4><p><code>其中subnet-lambda是新建需要做NAT网关的子网，这里面涉及到网络的一些基础概念，子网划分，默认存在了三个子网为：172.31.0.0/20（0-15）、172.31.16.0/20（16-31）、172.31.32.0/20（32-47），不难看出每个子网段的子网都是16为单位延伸扩展，所以为了方便区分，我们需要创建一个子网为172.31.48.0/20（48-63），作为NAT网关需要使用的子网段。</code><br><img src="/images/lambda-images/1517885255818.png" width="100%" height="70%"></p>
