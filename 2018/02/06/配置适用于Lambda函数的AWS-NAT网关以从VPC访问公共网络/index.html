@@ -96,16 +96,28 @@
 
 
 
-<meta name="description" content="亦余心之所善兮,虽九死其犹未悔.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一匹来自北方的狼">
-<meta property="og:url" content="http://blog.wolf7.org/categories/运维/index.html">
+<meta name="description" content="需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）另外单个子网需要单独配置NAT网关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络">
+<meta property="og:url" content="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/index.html">
 <meta property="og:site_name" content="一匹来自北方的狼">
-<meta property="og:description" content="亦余心之所善兮,虽九死其犹未悔.">
+<meta property="og:description" content="需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）另外单个子网需要单独配置NAT网关">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885033617.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885255818.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887619633.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517886163129.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885960712.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887872674.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887081653.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887288826.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887298487.png">
+<meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887323032.png">
+<meta property="og:updated_time" content="2018-02-06T03:44:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一匹来自北方的狼">
-<meta name="twitter:description" content="亦余心之所善兮,虽九死其犹未悔.">
+<meta name="twitter:title" content="配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络">
+<meta name="twitter:description" content="需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）另外单个子网需要单独配置NAT网关">
+<meta name="twitter:image" content="http://blog.wolf7.org/images/lambda-images/1517885033617.png">
 
 
 
@@ -134,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.wolf7.org/categories/运维/"/>
+  <link rel="canonical" href="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/"/>
 
 
 
 
 
-  <title>分类: 运维 | 一匹来自北方的狼</title>
+  <title>配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络 | 一匹来自北方的狼</title>
   
 
 
@@ -165,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,167 +305,239 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>运维<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="一匹来自北方的狼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一匹来自北方的狼">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/01/01/做一个职业运维人/" itemprop="url">
-              
-                <span itemprop="name">做一个职业运维人</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-01T21:09:25+08:00"
-              content="2018-01-01" >
-          01-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T11:37:30+08:00">
+                2018-02-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AWS/" itemprop="url" rel="index">
+                    <span itemprop="name">AWS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  608
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/17/运维的价值与目标拆解/" itemprop="url">
-              
-                <span itemprop="name">运维的价值与目标拆解</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-17T21:41:56+08:00"
-              content="2017-07-17" >
-          07-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/02/如何接受一个新业务的运维工作/" itemprop="url">
-              
-                <span itemprop="name">如何接受一个新业务的运维工作？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-02T22:09:25+08:00"
-              content="2016-05-02" >
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/03/完备的监控应覆盖什么/" itemprop="url">
-              
-                <span itemprop="name">完备的监控应覆盖什么？</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-03T21:23:23+08:00"
-              content="2016-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2015/01/02/运维蓝图思考/" itemprop="url">
-              
-                <span itemprop="name">运维蓝图思考</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-01-02T21:09:25+08:00"
-              content="2015-01-02" >
-          01-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote>
+<h5 id="需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）"><a href="#需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）" class="headerlink" title="需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）"></a>需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）</h5><p>另外单个子网需要单独配置NAT网关<br><a id="more"></a></p>
+<ul>
+<li>这里涉及到几个点：VPC、Subnet子网(重要，需要理解AWS子网原理)、IGW、NAT网关</li>
+</ul>
+</blockquote>
+<h4 id="配置VPC"><a href="#配置VPC" class="headerlink" title="配置VPC"></a>配置VPC</h4><pre><code>VPC默认是会存在，这里会涉及到各个AWS服务的VPC关联问题，如果新建VPC，会导致其他VPC与lambda或其他服务无法访问等未知问题，所以，不建议在创建新的VPC，而是在原有的VPC中创建子网，然后配置NAT网关；
+172.31.0.0/16是默认存在的VPC，以下我们将在这个VPC中创建subnet子网
+</code></pre><p><img src="/images/lambda-images/1517885033617.png" width="100%" height="70%"></p>
+<h4 id="创建VPC中的subnet子网"><a href="#创建VPC中的subnet子网" class="headerlink" title="创建VPC中的subnet子网"></a>创建VPC中的subnet子网</h4><pre><code>其中subnet-lambda是新建需要做NAT网关的子网，这里面涉及到网络的一些基础概念，子网划分，默认存在了三个子网为：172.31.0.0/20（0-15）、172.31.16.0/20（16-31）、172.31.32.0/20（32-47），不难看出每个子网段的子网都是16为单位延伸扩展，所以我们需要创建一个子网为172.31.48.0/20（48-63），作为NAT网关需要使用的子网段；
+</code></pre><p><img src="/images/lambda-images/1517885255818.png" width="100%" height="70%"></p>
+<h4 id="配置igw网关"><a href="#配置igw网关" class="headerlink" title="配置igw网关"></a>配置igw网关</h4><pre><code>igw网关为AWS服务器中的Intelnet访问配置，在创建VPC的时候会自动创建igw，因此无需对igw做配置与修改，如果是新建的VPC，就需在新建一个igw，并且attached到创建的VPC上；
+</code></pre><p><img src="/images/lambda-images/1517887619633.png" width="100%" height="70%"></p>
+<h4 id="配置NAT网关"><a href="#配置NAT网关" class="headerlink" title="配置NAT网关"></a>配置NAT网关</h4><pre><code>在NAT网关中新建，将其关联到一个可已经配置igw的子网，并选择一个ElasticIP；
+</code></pre><p><img src="/images/lambda-images/1517886163129.png" width="100%" height="70%"></p>
+<h4 id="配置route表"><a href="#配置route表" class="headerlink" title="配置route表"></a>配置route表</h4><pre><code>1.在路由表需要创建一个route表（rtb-default），一般会创建默认route表，这时将上面新建的igw网关标记到默认route表，并关联已经创建的VPC中的三个子网
+2.新建一个route表（rtb-lambda），关联172.31.48.0/20子网段，将路由标记为0.0.0.0/0 --&gt;&gt; nat网关（新建的NAT网关的）
+</code></pre><p><img src="/images/lambda-images/1517885960712.png" width="100%" height="70%"><br><img src="/images/lambda-images/1517887872674.png" width="100%" height="70%"><br><img src="/images/lambda-images/1517887081653.png" width="100%" height="70%"></p>
+<h4 id="配置lambda函数"><a href="#配置lambda函数" class="headerlink" title="配置lambda函数"></a>配置lambda函数</h4><pre><code>1.新建lambda可执行的rule角色
+2.配置网络为新建VPC中的子网（172.31.48.0/20）
+3.开启需要入站、出站的安全组
+</code></pre><p><img src="/images/lambda-images/1517887288826.png" width="100%" height="70%"><br><img src="/images/lambda-images/1517887298487.png" width="100%" height="70%"><br><img src="/images/lambda-images/1517887323032.png" width="100%" height="70%"></p>
 
       
     </div>
+    
+    
+    
+    <div>
+          
+            
+          
+    </div>
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/05/一台电脑绑定多个github帐号教程/" rel="next" title="一台电脑绑定多个GitHub帐号教程">
+                <i class="fa fa-chevron-left"></i> 一台电脑绑定多个GitHub帐号教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -461,6 +545,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -481,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -573,6 +672,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）"><span class="nav-number">1.</span> <span class="nav-text">需求：因为lambda本身在建立之初是具备网络访问权限的，但是因为架构需要VPC，配置VPC以后lambda函数将失去公共的网络访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置VPC"><span class="nav-number"></span> <span class="nav-text">配置VPC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建VPC中的subnet子网"><span class="nav-number"></span> <span class="nav-text">创建VPC中的subnet子网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置igw网关"><span class="nav-number"></span> <span class="nav-text">配置igw网关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置NAT网关"><span class="nav-number"></span> <span class="nav-text">配置NAT网关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置route表"><span class="nav-number"></span> <span class="nav-text">配置route表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置lambda函数"><span class="nav-number"></span> <span class="nav-text">配置lambda函数</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -735,10 +850,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -762,6 +877,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 100805, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 100805, xid: "2018/02/06/配置适用于Lambda函数的AWS-NAT网关以从VPC访问公共网络/"});
 		
 
 		(function() {
