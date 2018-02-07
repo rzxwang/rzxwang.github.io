@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,9 +100,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络">
 <meta property="og:url" content="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络/index.html">
-<meta property="og:site_name" content="The wolf from the north">
+<meta property="og:site_name" content="小煜狼皇">
 <meta property="og:description" content="需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）。">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885033617.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885255818.png">
@@ -133,7 +133,7 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -153,7 +153,7 @@
 
 
 
-  <title>配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络 | The wolf from the north</title>
+  <title>配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络 | 小煜狼皇</title>
   
 
 
@@ -171,7 +171,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -189,7 +189,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">The wolf from the north</span>
+        <span class="site-title">小煜狼皇</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -219,7 +219,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -229,7 +229,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -239,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -249,7 +249,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
@@ -259,7 +259,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            Amazon
+            亚马逊
           </a>
         </li>
       
@@ -282,7 +282,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            搜索
           </a>
         </li>
       
@@ -302,7 +302,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
+             placeholder="搜索..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -343,13 +343,13 @@
     <link itemprop="mainEntityOfPage" href="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="The wolf from the north">
+      <meta itemprop="name" content="小煜狼皇">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The wolf from the north">
+      <meta itemprop="name" content="小煜狼皇">
     </span>
 
     
@@ -367,9 +367,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-06T11:37:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T11:37:30+08:00">
                 2018-02-06
               </time>
             
@@ -388,7 +388,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -439,9 +439,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Words count in article</span>
+                  <span class="post-meta-item-text">字数统计</span>
                 
-                <span title="Words count in article">
+                <span title="字数统计">
                   729
                 </span>
               
@@ -455,9 +455,9 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Reading time</span>
+                  <span class="post-meta-item-text">阅读时长</span>
                 
-                <span title="Reading time">
+                <span title="阅读时长">
                   3
                 </span>
               
@@ -580,10 +580,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -592,10 +592,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
-               alt="The wolf from the north" />
-          <p class="site-author-name" itemprop="name">The wolf from the north</p>
+               alt="小煜狼皇" />
+          <p class="site-author-name" itemprop="name">小煜狼皇</p>
            
-              <p class="site-description motion-element" itemprop="description">亦余心之所善兮,<br />虽九死其犹未悔.</p>
+              <p class="site-description motion-element" itemprop="description">亦余心之所善兮 <br />虽九死其犹未悔</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -604,7 +604,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -615,7 +615,7 @@
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -662,7 +662,7 @@
           <div class="links-of-blogroll motion-element links-of-blogroll-block">
             <div class="links-of-blogroll-title">
               <i class="fa  fa-fw fa-globe"></i>
-              Links
+              友情链接
             </div>
             <ul class="links-of-blogroll-list">
               
@@ -727,7 +727,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">The wolf from the north</span>
+  <span class="author" itemprop="copyrightHolder">小煜狼皇</span>
 </div>
 
 <!--
@@ -739,11 +739,11 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
