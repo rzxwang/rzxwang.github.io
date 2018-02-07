@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="小煜狼皇">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.wolf7.org/images/git.png">
-<meta property="og:updated_time" content="2018-02-07T06:02:39.000Z">
+<meta property="og:updated_time" content="2018-02-07T06:05:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一台电脑绑定多个GitHub帐号教程">
 <meta name="twitter:image" content="http://blog.wolf7.org/images/git.png">
@@ -467,7 +467,8 @@
 
       
         <p><img src="/images/git.png" width="100%" height="70%"><br><a id="more"></a></p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件"><a href="#ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件" class="headerlink" title="ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:"></a>ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:</h4><pre><code>1.能够生成两对 私钥/公钥
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><pre><code>ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:
+1.能够生成两对 私钥/公钥
 2.push 时，可以区分两个账户，推送到相应的仓库
 </code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><pre><code>1.生成 私钥/公钥 时，密钥文件命名避免重复
 2.设置不同 Host 对应同一 HostName 但密钥不同
@@ -721,7 +722,7 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C &quot;yourmail@xxx.com&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh-方式链接到-Github，需要唯一的公钥，如果想同一台电脑绑定两个Github-帐号，需要两个条件"><span class="nav-number">1.1.</span> <span class="nav-text">ssh 方式链接到 Github，需要唯一的公钥，如果想同一台电脑绑定两个Github 帐号，需要两个条件:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作方法"><span class="nav-number">3.</span> <span class="nav-text">操作方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作方法"><span class="nav-number">3.</span> <span class="nav-text">操作方法</span></a></li></ol></div>
             
 
           </div>
