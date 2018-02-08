@@ -1862,7 +1862,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d9c85b;
+  background: #242ea7;
 }
 .links-of-author-item {
   text-align: center;
@@ -3048,10 +3048,6 @@ pre .javascript .function {
   border: none !important;
   transition-property: unset;
   padding: 0px 15px;
-}
-.posts-expand .post-eof {
-  margin: 0px;
-  background-color: rgba(255,255,255,0);
 }
 .site-author-image {
   border: 2px solid #fff;
