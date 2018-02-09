@@ -65,8 +65,19 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[Firewalld Rich and Direct Rules: Setting up RHEL 7 Server as a Router]]></title>
+    <url>%2F2016%2F02%2F12%2FFirewalld-Rich-and-Direct-Rules-Setting-up-RHEL-7-Server-as-a-Router%2F</url>
+    <content type="text"><![CDATA[Document links]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>route</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Setting up a MariaDB Server with SELinux on RHEL 7]]></title>
-    <url>%2F2016%2F02%2F08%2FSetting-up-a-MariaDB-Server-with-SELinux-on-RHEL-7%2F</url>
+    <url>%2F2016%2F02%2F10%2FSetting-up-a-MariaDB-Server-with-SELinux-on-RHEL-7%2F</url>
     <content type="text"><![CDATA[Document links]]></content>
       <categories>
         <category>RHCE</category>
