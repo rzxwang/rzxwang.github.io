@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="&amp;emsp; 需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）    AWS官方提供的NAT网关架构图  AWS官方技术文档">
+<meta name="description" content="需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站） &amp;emsp;   AWS官方提供的NAT网关架构图  AWS官方技术文档">
 <meta name="keywords" content="AWS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络">
 <meta property="og:url" content="http://blog.wolf7.org/2018/02/06/配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络/index.html">
 <meta property="og:site_name" content="小煜狼皇的博客">
-<meta property="og:description" content="&amp;emsp; 需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）    AWS官方提供的NAT网关架构图  AWS官方技术文档">
+<meta property="og:description" content="需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站） &amp;emsp;   AWS官方提供的NAT网关架构图  AWS官方技术文档">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517885033617.png">
@@ -115,10 +115,10 @@
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887288826.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887298487.png">
 <meta property="og:image" content="http://blog.wolf7.org/images/lambda-images/1517887323032.png">
-<meta property="og:updated_time" content="2018-02-09T10:31:17.000Z">
+<meta property="og:updated_time" content="2018-02-11T03:08:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置适用于Lambda函数的AWS环境NAT网关-从VPC访问Intelnet公共网络">
-<meta name="twitter:description" content="&amp;emsp; 需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）    AWS官方提供的NAT网关架构图  AWS官方技术文档">
+<meta name="twitter:description" content="需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站） &amp;emsp;   AWS官方提供的NAT网关架构图  AWS官方技术文档">
 <meta name="twitter:image" content="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png">
 
 
@@ -491,7 +491,7 @@
 
       
         <hr>
-<p>&emsp;<font color="black" size="3"> <em>需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）</em> </font></p>
+<p><font color="black" size="3"> <em>需求：因为lambda本身在建立之初是具备公共的Intelnet访问权限的，但是因为架构需要VPC，配置VPC以后Lambda函数将失去公共的Intelnet访问权限，此时需要给VPC配置NAT网关，同时需要在安全组中添加需要出站的连接（默认是全部允许出站）</em> </font>&emsp;</p>
 <p><font color="red" size="4"> <strong> AWS官方提供的NAT网关架构图 </strong> </font><br><a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-working-with" target="_blank" rel="noopener">AWS官方技术文档</a><br><img src="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/images/nat-gateway-diagram.png" width="100%" height="70%"></p>
 <hr>
 <a id="more"></a>
