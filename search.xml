@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Install And Configure Grafana ON AWS EC2 Instance(Ubuntu)]]></title>
+    <title><![CDATA[Install And Configure Grafana/influxdb ON AWS EC2 Instance(Ubuntu)]]></title>
     <url>%2F2018%2F05%2F29%2F%E6%90%AD%E5%BB%BAgrafana-on-AWS-Ubuntu-Instance%2F</url>
-    <content type="text"><![CDATA[需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &emsp; 一些有用的资料 Grafana官方安装文档GitHub提供的监控AWS的一些基础服务模板]]></content>
+    <content type="text"><![CDATA[需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &emsp; 一些有用的资料 Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板]]></content>
       <categories>
         <category>AWS</category>
       </categories>
