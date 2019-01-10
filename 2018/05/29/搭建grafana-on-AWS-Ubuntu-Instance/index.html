@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="小煜狼皇的博客">
 <meta property="og:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &amp;emsp;   一些有用的资料  Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T07:27:08.000Z">
+<meta property="og:updated_time" content="2018-05-31T09:34:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install And Configure Grafana&#x2F;influxdb ON AWS EC2 Instance(Ubuntu)">
 <meta name="twitter:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &amp;emsp;   一些有用的资料  Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  64
+                  180
                 </span>
               
 
@@ -483,6 +483,9 @@
 <p><font color="red" size="4"> <strong> 一些有用的资料 </strong> </font><br><a href="http://docs.grafana.org/installation/debian/" target="_blank" rel="noopener">Grafana官方安装文档</a><br><a href="https://hostpresto.com/community/tutorials/how-to-install-influxdb-on-ubuntu-14-04/" target="_blank" rel="noopener">InfluxDB安装文档</a><br><a href="https://github.com/monitoringartist/grafana-aws-cloudwatch-dashboards" target="_blank" rel="noopener">GitHub提供的监控AWS的一些基础服务模板</a></p>
 <hr>
 <a id="more"></a>
+<h3 id="添加AWS-Redshift-dashboard"><a href="#添加AWS-Redshift-dashboard" class="headerlink" title="添加AWS Redshift dashboard"></a>添加AWS Redshift dashboard</h3><ul>
+<li>因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了。<br>  1.在variable添加Region，以便于可以在dashboard中自定义选择区域<br>  2.在配置dashboard的时候，引用以上variable<br>  3.对metrics、Axes、Legend、Display配置的时候注意一些细节，比如在Axes配置network展示单位需要使用bits/seq，CPU与磁盘剩余百分比需要使用</li>
+</ul>
 
       
     </div>
@@ -580,8 +583,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -728,6 +740,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加AWS-Redshift-dashboard"><span class="nav-number">1.</span> <span class="nav-text">添加AWS Redshift dashboard</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -745,7 +773,7 @@
 
 <div class="theme-info">
   <div class="copyright"></div>
-  <span class="post-count"> 博客总计 12.4k 字 </span>
+  <span class="post-count"> 博客总计 12.5k 字 </span>
 </div>
 <!-- <div class="copyright" > -->
 <div class="copyright" >
