@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="小煜狼皇的博客">
 <meta property="og:description" content="Configure network bonding and teaming on RHEL 7.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-09T09:48:30.000Z">
+<meta property="og:updated_time" content="2019-01-14T09:57:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Configure Aggregated Network Links on RHEL 7: Bonding and Teaming">
 <meta name="twitter:description" content="Configure network bonding and teaming on RHEL 7.">
@@ -477,7 +477,12 @@
       
 
       
-        <p><font color="black" size="3"> Configure network bonding and teaming on RHEL 7. </font><br><a id="more"></a><br>Aggregated Network Links<br>There are two ways to configure aggregated network links on RHEL 7, via bonding or via teaming.</p>
+        <hr>
+<font color="black" size="3"> Configure network bonding and teaming on RHEL 7. </font>
+
+<hr>
+<a id="more"></a>
+<p>Aggregated Network Links<br>There are two ways to configure aggregated network links on RHEL 7, via bonding or via teaming.</p>
 <p>Network bonding enables two or more network interfaces to act as one, simultaneously increasing the bandwidth and providing redundancy.</p>
 <p>Network teaming is designed to implement the concept in a different way by providing a small kernel driver to implement the fast handling of packet flows, and various user-space applications to do everything else in user space. The existing bonding driver is unaffected, network teaming is offered as an alternative and does not replace bonding in RHEL 7.</p>
 <h3 id="Before-We-Begin"><a href="#Before-We-Begin" class="headerlink" title="Before We Begin"></a>Before We Begin</h3><p>We have two virtual machines in our lab, with two network interfaces each. One machine will be configured for network bonding, and one for network teaming. Basic IPv6 configuration for network teaming will be covered.</p>
