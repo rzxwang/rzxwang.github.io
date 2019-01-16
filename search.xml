@@ -23,9 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Install And Configure Grafana/influxdb ON AWS EC2 Instance(Ubuntu)]]></title>
+    <title><![CDATA[AWS EC2(Ubuntu)安装配置Grafana/influxdb]]></title>
     <url>%2F2018%2F05%2F29%2F%E6%90%AD%E5%BB%BAgrafana-on-AWS-Ubuntu-Instance%2F</url>
-    <content type="text"><![CDATA[需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &emsp; 一些有用的资料 Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板 添加AWS Redshift dashboard 1.因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了； 2.在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称； 3.配置dashboard的时候，在metrics中引用定义的variable； 4.在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱， 比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。 如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开启Show/Max/Min/As Table/Avg/Current。 Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。]]></content>
+    <content type="text"><![CDATA[需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. 一些有用的资料 Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板 添加AWS Redshift dashboard 因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；配置dashboard的时候，在metrics中引用定义的variable；在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开 Show/Max/Min/As Table/Avg/Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。]]></content>
       <categories>
         <category>AWS</category>
       </categories>

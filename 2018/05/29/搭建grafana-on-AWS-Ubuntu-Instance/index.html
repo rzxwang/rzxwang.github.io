@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &amp;emsp;   一些有用的资料  Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板">
+<meta name="description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板.">
 <meta name="keywords" content="AWS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Install And Configure Grafana&#x2F;influxdb ON AWS EC2 Instance(Ubuntu)">
+<meta property="og:title" content="AWS EC2(Ubuntu)安装配置Grafana&#x2F;influxdb">
 <meta property="og:url" content="http://blog.wolf7.org/2018/05/29/搭建grafana-on-AWS-Ubuntu-Instance/index.html">
 <meta property="og:site_name" content="小煜狼皇的博客">
-<meta property="og:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &amp;emsp;   一些有用的资料  Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板">
+<meta property="og:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T09:54:07.000Z">
+<meta property="og:updated_time" content="2019-01-16T07:01:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Install And Configure Grafana&#x2F;influxdb ON AWS EC2 Instance(Ubuntu)">
-<meta name="twitter:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板. &amp;emsp;   一些有用的资料  Grafana官方安装文档InfluxDB安装文档GitHub提供的监控AWS的一些基础服务模板">
+<meta name="twitter:title" content="AWS EC2(Ubuntu)安装配置Grafana&#x2F;influxdb">
+<meta name="twitter:description" content="需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板.">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>Install And Configure Grafana/influxdb ON AWS EC2 Instance(Ubuntu) | 小煜狼皇的博客</title>
+  <title>AWS EC2(Ubuntu)安装配置Grafana/influxdb | 小煜狼皇的博客</title>
   
 
 
@@ -376,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Install And Configure Grafana/influxdb ON AWS EC2 Instance(Ubuntu)</h1>
+          <h1 class="post-title" itemprop="name headline">AWS EC2(Ubuntu)安装配置Grafana/influxdb</h1>
         
 
         <div class="post-meta">
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  268
+                  264
                 </span>
               
 
@@ -499,18 +499,12 @@
 
       
         <hr>
-<p><font color="black" size="3"> <em>需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板.</em> </font>&emsp;</p>
-<p><font color="red" size="4"> <strong> 一些有用的资料 </strong> </font><br><a href="http://docs.grafana.org/installation/debian/" target="_blank" rel="noopener">Grafana官方安装文档</a><br><a href="https://hostpresto.com/community/tutorials/how-to-install-influxdb-on-ubuntu-14-04/" target="_blank" rel="noopener">InfluxDB安装文档</a><br><a href="https://github.com/monitoringartist/grafana-aws-cloudwatch-dashboards" target="_blank" rel="noopener">GitHub提供的监控AWS的一些基础服务模板</a></p>
+<p>需求：因AWS自带的CloudWatch监控不能满足当下需求，所以使用适用于AWS CloudWatch的Grafana仪表板.  </p>
 <hr>
-<a id="more"></a>
-<h1 id="添加AWS-Redshift-dashboard"><a href="#添加AWS-Redshift-dashboard" class="headerlink" title="  添加AWS Redshift dashboard  "></a><font color="DarkCyan" size="4"> <strong> 添加AWS Redshift dashboard </strong> </font></h1><pre><code>1.因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；
-2.在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；
-3.配置dashboard的时候，在metrics中引用定义的variable；
-4.在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，
-比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。
-如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开启Show/Max/Min/As Table/Avg/Current。
-Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。
-</code></pre>
+<a id="more"></a>  
+<font color="red" size="4"> <strong> 一些有用的资料 </strong> </font><br><a href="http://docs.grafana.org/installation/debian/" target="_blank" rel="noopener">Grafana官方安装文档</a><br><a href="https://hostpresto.com/community/tutorials/how-to-install-influxdb-on-ubuntu-14-04/" target="_blank" rel="noopener">InfluxDB安装文档</a><br><a href="https://github.com/monitoringartist/grafana-aws-cloudwatch-dashboards" target="_blank" rel="noopener">GitHub提供的监控AWS的一些基础服务模板</a><br><br><font color="DarkCyan" size="4"> <strong> 添加AWS Redshift dashboard </strong> </font>
+
+<h4 id="因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；"><a href="#因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；" class="headerlink" title="因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；"></a>因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；</h4><h4 id="在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；"><a href="#在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；" class="headerlink" title="在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；"></a>在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；</h4><h4 id="配置dashboard的时候，在metrics中引用定义的variable；"><a href="#配置dashboard的时候，在metrics中引用定义的variable；" class="headerlink" title="配置dashboard的时候，在metrics中引用定义的variable；"></a>配置dashboard的时候，在metrics中引用定义的variable；</h4><h4 id="在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data-rate中的bytes-sec，CPU-or-disk-展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开-Show-Max-Min-As-Table-Avg-Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line-Width是line的加粗。"><a href="#在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data-rate中的bytes-sec，CPU-or-disk-展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开-Show-Max-Min-As-Table-Avg-Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line-Width是line的加粗。" class="headerlink" title="在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开 Show/Max/Min/As Table/Avg/Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。"></a>在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开 Show/Max/Min/As Table/Avg/Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。</h4>
       
     </div>
     
@@ -769,7 +763,7 @@ Display是控制以line或者其他方式显示，Fill是颜色的深浅，line 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#添加AWS-Redshift-dashboard"><span class="nav-number">1.</span> <span class="nav-text">  添加AWS Redshift dashboard  </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；"><span class="nav-number">1.</span> <span class="nav-text">因为Grafana官方网站提供的模板中没有针对Redshift监控的模板，只能自己动手丰衣足食了；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；"><span class="nav-number">2.</span> <span class="nav-text">在variable添加Region、ClusterIdentifier以便于可以在dashboard中自定义选择区域与集群名称；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置dashboard的时候，在metrics中引用定义的variable；"><span class="nav-number">3.</span> <span class="nav-text">配置dashboard的时候，在metrics中引用定义的variable；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data-rate中的bytes-sec，CPU-or-disk-展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开-Show-Max-Min-As-Table-Avg-Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line-Width是line的加粗。"><span class="nav-number">4.</span> <span class="nav-text">在配置dashboard展示的时候，在添加Axes、Legend、Display的时候，需要注意一些细节，如果配置错误，展示会混乱，比如在Axes配置network展示单位需要使用data rate中的bytes/sec，CPU or disk 展示需要使用none中的percent。如果想在dashboard右下角显示最大、最大、当前等数据，需要在Legend开 Show/Max/Min/As Table/Avg/Current。Display是控制以line或者其他方式显示，Fill是颜色的深浅，line Width是line的加粗。</span></a></li></ol></div>
             
 
           </div>
