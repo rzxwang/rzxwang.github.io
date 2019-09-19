@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="K8S," />
 
 
 
@@ -96,18 +96,19 @@
 
 
 
-<meta name="description" content="1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.">
+<meta name="description" content="什么是Kubernetes？Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展。如果你曾经用过Docker容器技术部署容器，那么可以将Docker看成Kubernetes内部使用的低级别组件。Kubernetes不仅仅支持Docker，还支持Rocket，这是另一种容器技术。">
+<meta name="keywords" content="K8S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kubernetes二进制部署">
 <meta property="og:url" content="http://blog.wolf7.org/2019/09/19/Kubernetes二进制部署/index.html">
 <meta property="og:site_name" content="小煜狼皇的博客">
-<meta property="og:description" content="1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.">
+<meta property="og:description" content="什么是Kubernetes？Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展。如果你曾经用过Docker容器技术部署容器，那么可以将Docker看成Kubernetes内部使用的低级别组件。Kubernetes不仅仅支持Docker，还支持Rocket，这是另一种容器技术。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.wolf7.org/images/k8s-arch.png">
-<meta property="og:updated_time" content="2019-09-19T10:50:14.000Z">
+<meta property="og:updated_time" content="2019-09-19T11:11:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes二进制部署">
-<meta name="twitter:description" content="1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.">
+<meta name="twitter:description" content="什么是Kubernetes？Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展。如果你曾经用过Docker容器技术部署容器，那么可以将Docker看成Kubernetes内部使用的低级别组件。Kubernetes不仅仅支持Docker，还支持Rocket，这是另一种容器技术。">
 <meta name="twitter:image" content="http://blog.wolf7.org/images/k8s-arch.png">
 
 
@@ -400,6 +401,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">Kubernetes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -440,7 +463,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  559
+                  649
                 </span>
               
 
@@ -456,7 +479,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -477,10 +500,24 @@
       
 
       
-        <font color="Orchid" size="2">1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.</font><br><font color="Orchid" size="2">2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.</font><br><font color="Orchid" size="2">3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.</font><br><a id="more"></a><br><br><br>### <font color="red" size="4"> <strong> kubernetes必备组件 </strong> </font> 
+        <hr>
+<h3 id="什么是Kubernetes？"><a href="#什么是Kubernetes？" class="headerlink" title="什么是Kubernetes？"></a>什么是Kubernetes？</h3><font color="black" size="3">Kubernetes（k8s）是自动化容器操作的开源平台，这些操作包括部署，调度和节点集群间扩展。如果你曾经用过Docker容器技术部署容器，那么可以将Docker看成Kubernetes内部使用的低级别组件。Kubernetes不仅仅支持Docker，还支持Rocket，这是另一种容器技术。</font>
 
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* kube-apiserver：集群的统一入口，各组件协调者，以RESTful API提供接口服务，所有对象资源的增删改查和监听操作都交给APIServer处理后再提交给Etcd存储。</span><br><span class="line">* kube-controller-manager：处理集群中常规后台任务，一个资源对应一个控制器，而ControllerManager就是负责管理这些控制器的。</span><br><span class="line">* kube-scheduler：根据调度算法为新创建的Pod选择一个<span class="keyword">Node</span><span class="title">节点，可以任意部署,可以部署在同一个节点上,也可以部署在不同的节点上。</span></span><br><span class="line"><span class="title">* etcd</span>：分布式键值存储系统。用于保存集群状态数据，比如Pod、Service等对象信息。</span><br><span class="line">* kubelet：<span class="literal">Master</span>在<span class="keyword">Node</span><span class="title">节点上的Agent</span>，管理本机运行容器的生命周期，比如创建容器、Pod挂载数据卷、下载secret、获取容器和节点状态等工作。kubelet将每个Pod转换成一组容器。</span><br><span class="line">* kube-proxy：在<span class="keyword">Node</span><span class="title">节点上实现Pod</span>网络代理，维护网络规则和四层负载均衡工作。</span><br><span class="line">* docker或rocket：容器引擎，运行容器。</span><br><span class="line">* Pod网络：Pod要能够相互间通信，K8S集群必须部署Pod网络，flannel是其中一种的可选方案，是CoreOS 团队针对 Kubernetes 设计的一个覆盖网络（Overlay Network）工具。</span><br></pre></td></tr></table></figure>
-<p><img src="/images/k8s-arch.png" width="100%" height="70%"></p>
+<hr>
+<a id="more"></a>
+<p><font color="Orchid" size="2">Kubernetes集群中主要存在两种类型的节点：master、minion节点.</font></p>
+<p><font color="Orchid" size="2">Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.</font></p>
+<p><font color="Orchid" size="2">Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.</font>&emsp;</p>
+<p><font color="DarkCyan" size="4"> <strong> kubernetes必备组件: </strong> </font>&emsp;</p>
+<p><font color="blue" size="2">1.kube-apiserver：集群的统一入口，各组件协调者，以RESTful API提供接口服务，所有对象资源的增删改查和监听操作都交给APIServer处理后再提交给Etcd存储。</font></p>
+<p><font color="blue" size="2">2.kube-controller-manager：处理集群中常规后台任务，一个资源对应一个控制器，而ControllerManager就是负责管理这些控制器的。</font></p>
+<p><font color="blue" size="2">3.kube-scheduler：根据调度算法为新创建的Pod选择一个Node节点，可以任意部署,可以部署在同一个节点上,也可以部署在不同的节点上。</font></p>
+<p><font color="blue" size="2">4.etcd：分布式键值存储系统。用于保存集群状态数据，比如Pod、Service等对象信息。</font></p>
+<p><font color="blue" size="2">5.kubelet：Master在Node节点上的Agent，管理本机运行容器的生命周期，比如创建容器、Pod挂载数据卷、下载secret、获取容器和节点状态等工作。kubelet将每个Pod转换成一组容器。</font></p>
+<p><font color="blue" size="2">6.kube-proxy：在Node节点上实现Pod网络代理，维护网络规则和四层负载均衡工作。</font></p>
+<p><font color="blue" size="2">7.docker或rocket：容器引擎，运行容器。</font></p>
+<p><font color="blue" size="2">8.Pod网络：Pod要能够相互间通信，K8S集群必须部署Pod网络，flannel是其中一种的可选方案，是CoreOS 团队针对 Kubernetes 设计的一个覆盖网络（Overlay Network）工具。</font>&emsp;</p>
+<p><font color="red" size="4"> <strong> 架构图: </strong> </font><br>&emsp;<br><img src="/images/k8s-arch.png" width="100%" height="70%"></p>
 <h3 id="准备部署环境"><a href="#准备部署环境" class="headerlink" title="准备部署环境:"></a>准备部署环境:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vip            192.168.1.100    keepalived    </span><br><span class="line">k8s-master-01    192.168.1.101    kube-apiserver,kube-controller-manager,kube-scheduler,etcd</span><br><span class="line">k8s-master-02    192.168.1.102    kube-apiserver,kube-controller-manager,kube-scheduler</span><br><span class="line">k8s-node-01     192.168.1.103    kubelet,kube-proxy,docker,flannel,etcd</span><br><span class="line">k8s-node-02     192.168.1.104    kubelet,kube-proxy,docker,flannel,etcd</span><br></pre></td></tr></table></figure>
 <h3 id="系统环境初始化："><a href="#系统环境初始化：" class="headerlink" title="系统环境初始化："></a>系统环境初始化：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#系统更新</span></span><br><span class="line">yum install -y epel-release; yum update -y</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改个节点主机名</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-master-01</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-master-02</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-node-01</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-node-02</span><br></pre></td></tr></table></figure>
 <hr>
@@ -503,6 +540,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/K8S/" rel="tag"># K8S</a>
+          
+        </div>
       
 
       
@@ -611,7 +654,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -622,7 +665,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -757,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备部署环境"><span class="nav-number">1.</span> <span class="nav-text">准备部署环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统环境初始化："><span class="nav-number">2.</span> <span class="nav-text">系统环境初始化：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Kubernetes？"><span class="nav-number">1.</span> <span class="nav-text">什么是Kubernetes？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备部署环境"><span class="nav-number">2.</span> <span class="nav-text">准备部署环境:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统环境初始化："><span class="nav-number">3.</span> <span class="nav-text">系统环境初始化：</span></a></li></ol></div>
             
 
           </div>
@@ -781,7 +824,7 @@
 
 <div class="theme-info">
   <div class="copyright"></div>
-  <span class="post-count"> 博客总计 13.3k 字 </span>
+  <span class="post-count"> 博客总计 13.4k 字 </span>
 </div>
 <!-- <div class="copyright" > -->
 <div class="copyright" >
