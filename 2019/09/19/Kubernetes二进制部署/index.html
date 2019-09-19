@@ -103,12 +103,12 @@
 <meta property="og:site_name" content="小煜狼皇的博客">
 <meta property="og:description" content="1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.wolf7.org/images/arch.jpg">
-<meta property="og:updated_time" content="2019-09-19T10:45:52.000Z">
+<meta property="og:image" content="http://blog.wolf7.org/images/k8s-arch.png">
+<meta property="og:updated_time" content="2019-09-19T10:48:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes二进制部署">
 <meta name="twitter:description" content="1.Kubernetes集群中主要存在两种类型的节点：master、minion节点.2.Minion节点为运行 Docker容器的节点，负责和节点上运行的 Docker 进行交互，并且提供了代理功能.3.Master节点负责对外提供一系列管理集群的API接口，并且通过和 Minion 节点交互来实现对集群的操作管理.">
-<meta name="twitter:image" content="http://blog.wolf7.org/images/arch.jpg">
+<meta name="twitter:image" content="http://blog.wolf7.org/images/k8s-arch.png">
 
 
 
@@ -489,7 +489,7 @@
 <li>docker或rocket：容器引擎，运行容器。</li>
 <li>Pod网络：Pod要能够相互间通信，K8S集群必须部署Pod网络，flannel是其中一种的可选方案，是CoreOS 团队针对 Kubernetes 设计的一个覆盖网络（Overlay Network）工具。</li>
 </ul>
-<p><img src="/images/arch.jpg" width="100%" height="70%"></p>
+<p><img src="/images/k8s-arch.png" width="100%" height="70%"></p>
 <h3 id="准备部署环境"><a href="#准备部署环境" class="headerlink" title="准备部署环境:"></a>准备部署环境:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vip            192.168.1.100    keepalived    </span><br><span class="line">k8s-master-01    192.168.1.101    kube-apiserver,kube-controller-manager,kube-scheduler,etcd</span><br><span class="line">k8s-master-02    192.168.1.102    kube-apiserver,kube-controller-manager,kube-scheduler</span><br><span class="line">k8s-node-01     192.168.1.103    kubelet,kube-proxy,docker,flannel,etcd</span><br><span class="line">k8s-node-02     192.168.1.104    kubelet,kube-proxy,docker,flannel,etcd</span><br></pre></td></tr></table></figure>
 <h3 id="系统环境初始化："><a href="#系统环境初始化：" class="headerlink" title="系统环境初始化："></a>系统环境初始化：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#系统更新</span></span><br><span class="line">yum install -y epel-release; yum update -y</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改个节点主机名</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-master-01</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-master-02</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-node-01</span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname k8s-node-02</span><br></pre></td></tr></table></figure>
 <hr>
